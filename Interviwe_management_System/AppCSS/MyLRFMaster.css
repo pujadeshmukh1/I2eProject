@@ -1,0 +1,9 @@
+﻿#ms-designer-ribbon,
+#suiteBar,
+#s4-ribbonrow,
+#s4-titlerow,
+#sideNavBox,
+#pfooter,
+#previewRibbon {
+  display: none !important;
+}

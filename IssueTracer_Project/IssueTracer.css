@@ -1,0 +1,126 @@
+.modal-content{
+    /* border:2px solid blue; */
+    width:130%;
+   
+     
+  }
+  
+  .modal-body{
+    /* border:2px solid red; */
+    width:84%;
+    margin: auto;
+  }
+  
+  .modal-header{
+   /* background-color:  #b8dadb;/*/
+    background-image: linear-gradient(to right, #22e4e4, #0ab7b7);
+    /*//border-radius: 18px;*/
+   /*// padding: 6px 19px;*/
+   /* //font-size: 10px;
+    //font-weight: 500;*/
+    color: #fff;
+    background-color: #00bfc2;
+    border-color: #02b3b6;
+    font-weight: bold;
+    transition: all 0.5s ease;
+   
+   
+  }
+  
+  .modal-header>h2{
+    color:white;
+    margin-right: 26%;
+  }
+  
+  
+  #update-btn,
+  #submit-btn{
+    background-image: linear-gradient(to right, #22e4e4, #0ab7b7);
+    border-radius: 5px;
+    /* padding: 6px 19px;
+    font-size: 14px;
+    font-weight: 500; */
+    color: #fff;
+    background-color: #00bfc2;
+    border-color: #02b3b6;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    margin-left: 36%;
+    /* border:2px solid red; */
+  }
+  
+  #update-btn:hover,
+  #exportButton:hover,
+  #add-user-btn:hover,
+  #submit-btn:hover {
+    box-shadow: 0 16px 5px -7px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  
+  #add-user-btn{
+    background-image: linear-gradient(to right, #22e4e4, #0ab7b7);
+    border-radius: 5px;
+    /* padding: 6px 19px;
+    font-size: 14px;
+    font-weight: 500; */
+    color: #fff;
+    background-color: #00bfc2;
+    border-color: #02b3b6;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    /* margin-left: 40%; */
+  }
+  
+  .conts{
+  margin-top:0% ;
+  /* border:2px solid red; */
+  }
+  .cont{
+    background-image: linear-gradient(to right, #22e4e4, #0ab7b7);
+    height: 30%;
+  
+  }
+  .box{
+  margin-left:2% ;
+  
+  }
+  
+  .buttons{
+   /* border:2px solid red; */
+    width:100%;
+  }
+  #exportButton{
+    background-image: linear-gradient(to right, #ffc56a, #ff9212);
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    height:37.6px;
+    transition: all 0.5s ease;
+  
+  }
+  #searchInput{
+     margin-left: 55%;
+     height:37.6px;
+     border-radius: 5px;
+     background-color:white;
+     font-size: 14px;
+     font-weight: bold;
+  }
+  
+  #chart{
+     margin-top:30px;
+    border:2px solid red;
+     width:50% ;
+  }
+  .demo-container1{
+       width:50% ;
+   border:2px solid red;
+  }
+  #chart1{
+    margin-top:20px;
+   
+     width:100% ;
+  }

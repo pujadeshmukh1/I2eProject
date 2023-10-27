@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office"
+	xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+
+	<title>Home</title>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/2182e57d70.js" crossorigin="anonymous"></script>
+
+	<!-- Devexpress CSS-->
+	<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.common.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.light.css" />
+	<link rel="dx-theme" data-theme="generic.light.compact"
+		href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.light.compact.css" />
+
+	<!-- Bootstrap CSS -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css" />
+
+	<!-- <link rel="stylesheet" type="text/css" href="../SiteAssets/IMS/AppCSS/Home.css" /> -->
+	<link rel="stylesheet" href="../AppCSS/Home.css">
+	<script src="../AppJS/Home.js"></script>
+	<script src="../AppJS/Master.js"></script>
+
+	<style type="text/css">
+		.form-control {
+			height: 34px !important;
+		}
+
+		.back,
+		.back a {
+			line-height: 1.6;
+			margin: 10px 10px 0 0;
+			cursor: pointer;
+			color: #00bfc2;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: 600;
+		}
+
+		#programDetails {
+			display: inline-block;
+		}
+
+		.back .fa {
+			font-size: 26px;
+			color: #00bfc2;
+			margin: 0 10px 0 0;
+			vertical-align: middle;
+		}
+
+		@media only screen and (max-device-width: 736px) and (min-device-width: 320px) and (orientation: portrait) {
+			#wrapper {
+				height: 100% !important;
+			}
+		}
+	</style>
+
+	<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Gala, Keval</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Title msdt:dt="string">Program List</mso:Title>
+<mso:Order msdt:dt="string">4700.00000000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Pawar, Sharad</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100BF2963977BC2AA42A199FDF9AF1D9ACC</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body class="load">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h4 id="programDetails">Interview Management System</h4>
+
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+		<div class="row program_table">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="dx-viewport">
+					<div class="item-container">
+						<div id="gridContainer"></div>
+					</div>
+					<div class="item-container" style="display: none;">
+						<div id="gridContainer1"></div>
+					</div>
+				</div>
+				<div id="divToast"></div>
+			</div>
+		</div>
+		<!-- /.program_table-->
+	</div>
+	<!-- /.container-fluid-->
+
+	<!-- sucessmodal -->
+	<div class="modal fade" id="successModal" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-md">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="background-color: #00bfc2;">
+					<h4 class="modal-title" style="color: #FFFFFF !important"></h4>
+				</div>
+				<div class="modal-body" style="display: none;">
+					<div class="col-md-6 col-sm-6 col-lg-6">
+						<button type="button" class="btn btn-warning btn-md btn-block" onclick="javascript:deleteItem();">Yes</button>
+					</div>
+					<div class="col-md-6 col-sm-6 col-lg-6">
+						<button type="button" class="btn btn-success btn-md btn-block" data-dismiss="modal">No</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!--<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.sucessmodal -->
+
+	<!-- successmodalAlert -->
+	<div id="successmodalAlert" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color: #00bfc2;">
+					<h4 class="modal-title" style="color: #FFFFFF !important;">Confirm</h4>
+				</div>
+				<div class="modal-body">
+					<p class="text-center" style="text-align: center;"></p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success btn-block" style="width: 20%; float: right;" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.successmodalAlert -->
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+
+	<!-- momentJS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+	<!-- bootstrap-datetimepicker -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js">
+	</script>
+	<!-- bootstrap-validator -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+	<!-- XLSX Library -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+
+
+	<!-- JSZip library -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.2/jszip.min.js"></script>
+	<!-- DevexpressJS -->
+	<script type="text/javascript" src="https://cdn3.devexpress.com/jslib/18.2.8/js/dx.all.js"></script>
+	<!-- underscoreJS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+	</script>
+	<script type="text/javascript" src="../SiteAssets/IMS/AppJS/Home.js?rev=08092023"></script>
+	<script type="text/javascript" src="../SiteAssets/IMS/AppJS/Master.js?rev=08092023"></script>
+
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices.min.js"></script>
+		<script type="text/javascript" src="../SiteAssets/IMS/JS/getItemVersion.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="../SiteAssets/IMS/CSS/loader.css" />
+	
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidate Details</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" >
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css" >
+    <!-- Devexpress CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.common.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.light.css">
+    <link rel="dx-theme" data-theme="generic.light.compact" href="https://cdn3.devexpress.com/jslib/18.2.8/css/dx.light.compact.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <!-- Latest compiled and minified CSS    -->
+    <!-- <link rel="stylesheet" type="text/css"  href="../SiteAssets/IMS/AppCSS/Feedback.css">
+
+    <script type="text/javascript" src="../SiteAssets/IMS/AppJS/Master.js" ></script>
+    <script type="text/javascript" src="../SiteAssets/IMS/AppJS/Feedback.js" ></script> -->
+    <script src="../AppJS/Master.js"></script>
+    <script src="../AppJS/Feedback.js"></script>
+    <link rel="stylesheet" href="../AppCSS/Feedback.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div
+        class="errormodal"
+        id="myModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modallg">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body" id="mBody">
+              <!-- Modal content goes here -->
+              
+            </div>
+            <div class="modal-footer d-inline-block" >
+            <button
+                type="button"
+                class="btn btn-secondary okButton save"
+                id="okbtn"
+                data-dismiss="modal" >
+                Ok
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning closeButton cancelbtn"
+                data-dismiss="modal" >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="successModel"
+        id="mysuccessModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered smodallg">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body" id="smBody">
+              <!-- Modal content goes here -->
+              
+            </div>
+            <div class="modal-footer d-inline-block" >
+            <button
+                type="button"
+                class="btn btn-secondary successbtn save"
+                id="successbtn"
+                data-dismiss="modal" >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row d-flex flexdiv">
+        <h4 class="d-inline-block flexdiv">Candidate Details</h4>
+        <!-- /.col -->
+        <div
+          class="d-inline-block btn-div"
+          id="buttn"
+          style="text-align: center"
+        >
+          <button type="button" class="btn btn-primary save" id="btnSave">
+            <i aria-hidden="true"></i> Submit
+          </button>
+          <button type="button" class="btn btn-warning cancel" id="btnCancel">
+            <i aria-hidden="true"></i> Cancel
+          </button>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="candidateDetails">
+        <div class="flexDiv">
+          <div class="flexDiv detailsDiv">
+            <p>Candidate Resume ID</p>
+            <p id="resumeId"></p>
+          </div>
+          <div class="flexDiv detailsDiv">
+            <p>Candidate Name</p>
+            <p id="candidateName"></p>
+          </div>
+          <div class="flexDiv detailsDiv">
+            <p>Position Applied For</p>
+            <p id="position"></p>
+          </div>
+          <div class="flexDiv detailsDiv">
+            <p>Total Score</p>
+            <input readonly id="totalScore" />
+          </div>
+        </div>
+        <div>
+          <div class="flexDiv detailsDiv">
+            <p>Interview Type</p>
+            <p id="interviewType"></p>
+          </div>
+          <div class="flexDiv detailsDiv">
+            <p>Interviewer</p>
+            <p id="interviewer"></p>
+          </div>
+          <div class="flexDiv detailsDiv">
+            <p>Practice</p>
+            <p id="practice"></p>
+          </div>
+        </div>
+        <div class="flexDiv detailsDiv">
+          <p>Date & Time</p>
+          <p id="date"></p>
+        </div>
+      </div>
+      <div class="form">
+        <div class="col-xs-12 col-sm-6 col-md-4 mt-4">
+          <div
+            class="align-flex d-flex align-items-start pt-5 program-value question"
+          >
+            <h5>Questions</h5>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <div class="align-flex pt-5 border program-value"><h5>Score</h5></div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <div class="align-flex pt-5 border program-value">
+            <h5>Remark</h5>
+          </div>
+        </div>
+        <div class="form-group" id="questionContainer"></div>
+      </div>
+    </div>
+  </body>
+</html>

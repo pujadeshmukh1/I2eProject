@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateNewFeedback</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" >
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css" >
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../SiteAssets/IMS/AppCSS/CreateNewFeedback.css"/> -->
+    <link rel="stylesheet" href="../AppCSS/CreateNewFeedback.css">
+        <!-- people-picker -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/_layouts/15/sp.runtime.js"></script>  
+  <script src="/_layouts/15/sp.js"></script>  
+  <script src="/_layouts/15/1033/strings.js"></script>  
+  <script src="/_layouts/15/clienttemplates.js"></script>  
+  <script src="/_layouts/15/clientforms.js"></script>  
+  <script src="/_layouts/15/clientpeoplepicker.js"></script>  
+  <script src="/_layouts/15/autofill.js"></script>  
+  <script src="_layouts/15/sp.core.js"></script> 
+   
+
+	
+
+  
+</head>
+<body>
+ <!-- pop for comformation -->
+
+ <div class="container-fluid">
+      <div class="errormodal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modallg">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body" id="mBody">
+              <!-- Modal content goes here -->
+              
+            </div>
+            <div class="modal-footer d-inline-block" >
+            <button type="button" class="btn btn-secondary okButton"  id="okbtn" data-dismiss="modal" >Ok</button>
+                
+            <button type="button" class="btn btn-secondary closeButton" data-dismiss="modal" id="close-btn"> Close </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- pop for feedback has been created successfully-->
+
+       <div class="container-fluid">
+      <div class="errormodal" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modallg">
+          <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body" id="mmBody">
+              <!-- Modal content goes here -->
+              
+            </div>
+            <div class="modal-footer d-inline-block" >
+            <button type="button" class="btn btn-secondary successButton succesButton"  id="successbtn" data-dismiss="modal" >Ok</button>
+                
+             </div>
+          </div>
+        </div>
+      </div>
+   
+   
+    <div id="cont">
+        <h4 id="programDetails">Create new feedback</h4>
+        
+        <div class="feedback">
+        <div class="row">
+
+            <div class="col-md-4 mb-4 cand">
+                <h4 for="candidateResumeId" class="form-label">Candidate Resume Id <span class="span">*</span></h4>
+                
+                <input type="text" class="form-control" id="candidateResumeId" required>
+            </div>
+        
+            <div class="col-md-4 mb-4">
+                <h4 for="candidateName" class="form-label">Candidate Name <span class="span">*</span></h4>
+                <input type="text" class="form-control" id="candidateName" required>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h4 for="exampleDatepicker1" class="form-label">Interview Type <span class="span">*</span></h4>
+                <select class="select form-control" id="interviewType" required>
+                <option value="">Select Interview Type</option>
+                <option value="Technical Interview">Technical Interview</option>
+                <option value="HR Interview">HR Interview</option>
+                </select>
+            </div>  
+
+            <div class="col-md-4 mb-4" id="interviewerField">
+                <h4 class="form-label" id="interviewerLabel">Interviewer  <span class="span">*</span></h4>
+                <div id="interviewerLabels">
+                <h4 for="exampleDatepicker1" class="form-label interviewer" id="interviewerTechLabel" style="display: none;">Tech Interviewer <span class="span">*</span>
+                </label>
+               <h4 for="exampleDatepicker1" class="form-label interviewer" id="interviewerHRLabel" style="display: none;">HR Interviewer<span class="span">*</span>
+               </label>
+                </div>
+                    <div id="peoplepicker"></div>
+            </div>
+            
+            <div class="col-md-4 mb-4 cand">
+                <h4 for="positionAppliedFor" class="form-label">Position Applied For <span class="span">*</span></h4>
+                <input type="text" class="form-control" id="positionAppliedFor">
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h4 for="practice" class="form-label">Practice <span class="span">*</span></h4>
+                <select class="select form-control" id="practice" >
+                    <!-- <option value="TechnicalInterview">Select Practice</option>
+                    <option value="TechnicalInterview">Software</option>
+                    <option value="TechnicalInterview">Planisware</option>
+                    <option value="TechnicalInterview">HR</option>
+                    <option value="TechnicalInterview">UI/UX</option> -->
+                 
+                </select>
+            </div> 
+
+           
+
+        </div>
+
+        <div class="row">
+        <div class="col-md-4 mb-4">
+                <h4 for="interviewDate" class="form-label">Interview Date & Time <span class="span">*</span></h4>
+                <input type="date" class="form-control" id="interviewDate" >
+            </div>  
+        </div>
+
+        <div class="modal-footer">
+            <div class="col-md-6 btnclass">
+            <button id="submit-btn" type="button" class="savebtn btn-lg mt-4 " >Submit</button>
+            <button id="cancel-btn" type="button" class="cancelbtn btn-lg mt-4 ">Cancel</button>
+        </div>
+
+    </div>
+    </div>
+    
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../SiteAssets/IMS/AppJS/Master.js?rev=09082023"></script>
+<script type="text/javascript" src="../SiteAssets/IMS/AppJS/createfeed.js"></script>      -->
+<script src="../AppJS/createfeed.js"></script>
+<script src="../AppJS/Master.js"></script>
